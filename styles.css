@@ -86,13 +86,45 @@ body {
   flex-direction: row-reverse;
 }
 
-.section .section-img,
+.section .image-card,
 .section .section-copy {
   width: 50%;
 }
 
+.image-card {
+  position: relative;
+}
+
 .section .section-img {
+  display: block;
+  width: 100%;
   border-radius: 14px;
+}
+
+.image-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.image-toggle-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #2f2f2f;
+  background: rgba(255, 245, 225, 0.88);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+
+.image-toggle-btn.is-active {
+  background: #2f2f2f;
+  color: #fff5e1;
 }
 
 .section-copy {
@@ -133,7 +165,7 @@ body {
     flex-direction: column;
   }
 
-  .section .section-img,
+  .section .image-card,
   .section .section-copy {
     width: 100%;
   }
