@@ -6,6 +6,10 @@ body {
 }
 
 .hero-header {
+  --bush-width: min(64vw, 760px);
+  --bush-start-offset: 85%;
+  --bush-end-offset: 190%;
+  --bush-reveal-duration: 3.6s;
   position: relative;
   width: 100%;
   height: min(58vw, 560px);
@@ -22,41 +26,41 @@ body {
 
 .bush {
   position: absolute;
-  top: 0;
-  width: min(52vw, 560px);
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  bottom: 0;
+  width: var(--bush-width);
+  height: auto;
+  display: block;
+  pointer-events: none;
   will-change: transform;
 }
 
 .bush-left {
-  left: 0;
-  transform: translateX(0);
+  left: 50%;
+  transform: translateX(calc(-1 * var(--bush-start-offset)));
 }
 
 .bush-right {
-  right: 0;
-  transform: scaleX(-1) translateX(0);
+  right: 50%;
+  transform: translateX(var(--bush-start-offset)) scaleX(-1);
 }
 
 .hero-header.reveal .bush-left {
-  animation: move-left 1.8s ease-out forwards;
+  animation: move-left var(--bush-reveal-duration) ease-in-out forwards;
 }
 
 .hero-header.reveal .bush-right {
-  animation: move-right 1.8s ease-out forwards;
+  animation: move-right var(--bush-reveal-duration) ease-in-out forwards;
 }
 
 @keyframes move-left {
   to {
-    transform: translateX(-105%);
+    transform: translateX(calc(-1 * var(--bush-end-offset)));
   }
 }
 
 @keyframes move-right {
   to {
-    transform: scaleX(-1) translateX(-105%);
+    transform: translateX(var(--bush-end-offset)) scaleX(-1);
   }
 }
 
@@ -125,11 +129,10 @@ body {
 
 @media (max-width: 900px) {
   .hero-header {
+    --bush-width: 80vw;
+    --bush-start-offset: 78%;
+    --bush-end-offset: 182%;
     height: min(68vw, 440px);
-  }
-
-  .bush {
-    width: 56vw;
   }
 
   .sections .section,
