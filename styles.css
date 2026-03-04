@@ -5,9 +5,59 @@ body {
   color: #2f2f2f;
 }
 
-header img {
+.hero-header {
+  position: relative;
   width: 100%;
-  display: block;
+  height: min(58vw, 560px);
+  overflow: hidden;
+}
+
+.header-background {
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/path.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.bush {
+  position: absolute;
+  top: 0;
+  width: min(52vw, 560px);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.bush-left {
+  left: 0;
+  transform: translateX(0);
+}
+
+.bush-right {
+  right: 0;
+  transform: scaleX(-1) translateX(0);
+}
+
+.hero-header.reveal .bush-left {
+  animation: move-left 1.8s ease-out forwards;
+}
+
+.hero-header.reveal .bush-right {
+  animation: move-right 1.8s ease-out forwards;
+}
+
+@keyframes move-left {
+  to {
+    transform: translateX(-105%);
+  }
+}
+
+@keyframes move-right {
+  to {
+    transform: scaleX(-1) translateX(-105%);
+  }
 }
 
 .section {
@@ -74,6 +124,14 @@ header img {
 }
 
 @media (max-width: 900px) {
+  .hero-header {
+    height: min(68vw, 440px);
+  }
+
+  .bush {
+    width: 56vw;
+  }
+
   .sections .section,
   .section.text-left,
   .section.text-right {
