@@ -64,40 +64,15 @@ body {
   }
 }
 
-.section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.intro {
-  min-height: 280px;
-  overflow: hidden;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.side-img {
-  width: min(38vw, 280px);
-  height: auto;
-  transition: transform 0.5s ease;
-}
-
-.side-img.left {
-  transform: translateX(-100%);
-}
-
-.side-img.right {
-  transform: translateX(100%);
-}
-
 .sections {
   display: flex;
   flex-direction: column;
 }
 
-.sections .section {
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 320px;
   padding: 2rem 5vw;
   gap: 2rem;
@@ -111,20 +86,37 @@ body {
   flex-direction: row-reverse;
 }
 
-.section img.section-img,
-.section p {
+.section .section-img,
+.section .section-copy {
   width: 50%;
 }
 
-.section img.section-img {
+.section .section-img {
   border-radius: 14px;
 }
 
-.section p {
+.section-copy {
   font-size: 1.1rem;
   line-height: 1.6;
   padding: 20px;
-  margin: 0;
+}
+
+.section-copy p {
+  margin: 0 0 0.9rem;
+}
+
+.section-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-copy .lesson-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.lesson-copy p {
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 900px) {
@@ -135,14 +127,14 @@ body {
     height: min(68vw, 440px);
   }
 
-  .sections .section,
+  .section,
   .section.text-left,
   .section.text-right {
     flex-direction: column;
   }
 
-  .section img.section-img,
-  .section p {
+  .section .section-img,
+  .section .section-copy {
     width: 100%;
   }
 }
