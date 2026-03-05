@@ -12,16 +12,13 @@ body {
   --bush-reveal-duration: 3.6s;
   position: relative;
   width: 100%;
-  height: min(58vw, 560px);
   overflow: hidden;
 }
 
 .header-background {
+  display: block;
   width: 100%;
-  height: 100%;
-  background-image: url('assets/path.webp');
-  background-size: cover;
-  background-position: center;
+  height: auto;
 }
 
 .bush {
@@ -64,6 +61,39 @@ body {
   }
 }
 
+.course-meta {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: 1.5rem 5vw;
+  background: #ffe7bf;
+  border-top: 1px solid rgba(47, 47, 47, 0.15);
+  border-bottom: 1px solid rgba(47, 47, 47, 0.15);
+}
+
+.meta-item {
+  flex: 1 1 0;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(47, 47, 47, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.meta-item h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.meta-item p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.meta-item a {
+  color: inherit;
+}
+
 .sections {
   display: flex;
   flex-direction: column;
@@ -98,6 +128,9 @@ body {
 .section .section-img {
   display: block;
   width: 100%;
+  height: clamp(280px, 34vw, 460px);
+  object-fit: contain;
+  background: #000;
   border-radius: 14px;
 }
 
@@ -156,7 +189,14 @@ body {
     --bush-width: 80vw;
     --bush-start-offset: 78%;
     --bush-end-offset: 182%;
-    height: min(68vw, 440px);
+  }
+
+  .course-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    flex: 1 1 calc(50% - 0.5rem);
   }
 
   .section,
@@ -168,5 +208,11 @@ body {
   .section .image-card,
   .section .section-copy {
     width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .meta-item {
+    flex-basis: 100%;
   }
 }
