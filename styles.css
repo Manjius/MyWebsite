@@ -23,9 +23,9 @@ body {
 
 .bush {
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   width: var(--bush-width);
-  height: auto;
+  height: 100%;
   display: block;
   pointer-events: none;
   will-change: transform;
