@@ -64,23 +64,6 @@ body {
 }
 
 
-.path-intro {
-  padding: 1.5rem 5vw;
-  text-align: center;
-}
-
-.path-intro h2 {
-  margin: 0 0 0.7rem;
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-}
-
-.path-intro p {
-  margin: 0 auto;
-  max-width: 860px;
-  line-height: 1.5;
-  font-size: 1.05rem;
-}
-
 .course-meta {
   display: flex;
   flex-wrap: nowrap;
