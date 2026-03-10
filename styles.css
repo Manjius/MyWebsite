@@ -11,7 +11,8 @@ body {
   --bush-end-offset: 190%;
   --bush-reveal-duration: 3.6s;
   position: relative;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -23,12 +24,13 @@ body {
 
 .bush {
   position: absolute;
-  bottom: -50px;
+  bottom: 0;
   width: var(--bush-width);
-  height: 100%;
+  height: auto;
   display: block;
   pointer-events: none;
   will-change: transform;
+  max-width: none;
 }
 
 .bush-left {
@@ -196,9 +198,14 @@ body {
 
 @media (max-width: 900px) {
   .hero-header {
-    --bush-width: 80vw;
-    --bush-start-offset: 78%;
-    --bush-end-offset: 182%;
+    --bush-width: 98vw;
+    --bush-start-offset: 74%;
+    --bush-end-offset: 178%;
+    width: 100%;
+  }
+
+  .bush {
+    bottom: 0;
   }
 
   .course-meta {
@@ -261,6 +268,12 @@ body {
 }
 
 @media (max-width: 640px) {
+  .hero-header {
+    --bush-width: 120vw;
+    --bush-start-offset: 70%;
+    --bush-end-offset: 170%;
+  }
+
   .meta-item {
     flex-basis: 100%;
   }
