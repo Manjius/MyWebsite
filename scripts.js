@@ -12,17 +12,18 @@ window.onload = () => {
       return;
     }
 
+    const setVersion = (version) => {
+      image.src = version === 'original' ? image.dataset.original : image.dataset.ai;
+      buttons.forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.version === version);
+      });
+    };
+
+    setVersion('ai');
+
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
-        const version = button.dataset.version;
-        if (version === 'ai') {
-          image.src = image.dataset.ai;
-        } else {
-          image.src = image.dataset.original;
-        }
-
-        buttons.forEach((btn) => btn.classList.remove('is-active'));
-        button.classList.add('is-active');
+        setVersion(button.dataset.version);
       });
     });
   });
