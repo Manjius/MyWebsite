@@ -11,7 +11,7 @@ body {
   --bush-end-offset: 190%;
   --bush-reveal-duration: 3.6s;
   position: relative;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -24,7 +24,7 @@ body {
 
 .bush {
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   width: var(--bush-width);
   height: auto;
   display: block;
@@ -198,9 +198,13 @@ body {
 
 @media (max-width: 900px) {
   .hero-header {
-    --bush-width: 98vw;
-    --bush-start-offset: 74%;
-    --bush-end-offset: 178%;
+    --bush-width: 1vw;
+    --bush-start-offset: 10%;
+    --bush-end-offset: 12%;
+      .bush {
+    bottom: -30px;
+    
+  }
     width: 100%;
   }
 
