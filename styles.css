@@ -259,7 +259,12 @@ body {
     line-height: 1.45;
   }
 
-  .intro-section {
+  .section.text-left.intro-section {
+    align-items: center;
+  }
+
+  .intro-image-card {
+    display: flex;
     align-items: center;
   }
 
