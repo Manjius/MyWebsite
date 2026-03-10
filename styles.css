@@ -11,7 +11,8 @@ body {
   --bush-end-offset: 190%;
   --bush-reveal-duration: 3.6s;
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -25,10 +26,11 @@ body {
   position: absolute;
   bottom: -50px;
   width: var(--bush-width);
-  height: 100%;
+  height: auto;
   display: block;
   pointer-events: none;
   will-change: transform;
+  max-width: none;
 }
 
 .bush-left {
@@ -196,9 +198,18 @@ body {
 
 @media (max-width: 900px) {
   .hero-header {
-    --bush-width: 80vw;
-    --bush-start-offset: 78%;
-    --bush-end-offset: 182%;
+    --bush-width: 1vw;
+    --bush-start-offset: 10%;
+    --bush-end-offset: 12%;
+      .bush {
+    bottom: -30px;
+    
+  }
+    width: 100%;
+  }
+
+  .bush {
+    bottom: 0;
   }
 
   .course-meta {
@@ -212,17 +223,83 @@ body {
   .section,
   .section.text-left,
   .section.text-right {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0.9rem;
+    padding: 1.25rem 4vw;
+    min-height: 0;
   }
 
-  .section .image-card,
+  .section .image-card {
+    width: 46%;
+  }
+
   .section .section-copy {
-    width: 100%;
+    width: 54%;
+    padding: 0.5rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.45;
+  }
+
+  .lesson-copy .lesson-title {
+    font-size: clamp(1.05rem, 3.4vw, 1.35rem);
+    margin-bottom: 0.55rem;
+  }
+
+  .lesson-copy p {
+    margin-bottom: 0.55rem;
+  }
+
+  .section .section-img {
+    height: 100%;
+    min-height: 185px;
+    max-height: 270px;
+    object-fit: cover;
+    background: #1a1a1a;
+    border-radius: 12px;
+  }
+
+  .image-toggle {
+    right: 8px;
+    bottom: 8px;
+    gap: 0.35rem;
+  }
+
+  .image-toggle-btn {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.72rem;
   }
 }
 
 @media (max-width: 640px) {
+  .hero-header {
+    --bush-width: 120vw;
+    --bush-start-offset: 70%;
+    --bush-end-offset: 170%;
+  }
+
   .meta-item {
     flex-basis: 100%;
+  }
+
+  .section,
+  .section.text-left,
+  .section.text-right {
+    gap: 0.65rem;
+    padding: 1rem 3vw;
+  }
+
+  .section .image-card {
+    width: 47%;
+  }
+
+  .section .section-copy {
+    width: 53%;
+    font-size: clamp(0.82rem, 2.9vw, 0.95rem);
+  }
+
+  .section .section-img {
+    min-height: 160px;
+    max-height: 220px;
   }
 }
