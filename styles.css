@@ -63,6 +63,7 @@ body {
   }
 }
 
+
 .course-meta {
   display: flex;
   flex-wrap: nowrap;
@@ -239,6 +240,19 @@ body {
     padding: 0.5rem;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     line-height: 1.45;
+  }
+
+  .section.text-left.intro-section {
+    align-items: center;
+  }
+
+  .intro-image-card {
+    display: flex;
+    align-items: center;
+  }
+
+  .intro-image-card .section-img {
+    object-position: center;
   }
 
   .lesson-copy .lesson-title {
