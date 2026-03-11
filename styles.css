@@ -39,8 +39,8 @@ footer.contact-bar a:focus-visible {
 }
 
 footer.contact-bar svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.65rem;
+  height: 1.65rem;
   flex: 0 0 auto;
   fill: currentColor;
 }
